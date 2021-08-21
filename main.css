@@ -3,6 +3,7 @@
 
 :root {
   --color-primary: hsl(0, 93%, 28%);
+  --color-primary-light: hsl(0, 93%, 93%);
   --color-light: hsl(0, 0%, 95%);
   --color-dark: hsl(0, 0%, 9%);
   --color-text-light: hsl(0, 0%, 100%);
@@ -133,20 +134,22 @@ body {
   border: 0;
   font-family: var(--font-button);
   text-transform: uppercase;
+  text-align: center;
   background-color: var(--color-primary);
   color: var(--color-text-light);
+  border: 4px solid transparent;
   text-decoration: none;
-  transition: background 0.25s, color 0.25s;
+  transition: background 0.5s, color 0.5s;
   position: absolute;
   bottom: 0;
 }
 .card__button:hover {
-  background-color: var(--color-dark);
-  cursor: pointer;
-}
-.card__button:active {
   background-color: var(--color-light);
   color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+.card__button:active {
+  font-weight: bold;
 }
 
 /*Footer definitions*/
