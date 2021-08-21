@@ -1,0 +1,250 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400&family=Roboto:wght@500&display=swap");
+
+:root {
+  --color-primary: hsl(0, 93%, 28%);
+  --color-light: hsl(0, 0%, 95%);
+  --color-dark: hsl(0, 0%, 9%);
+  --color-text-light: hsl(0, 0%, 100%);
+  --color-text-dark: hsl(0, 0%, 0%);
+  --font-main: "Open Sans";
+  --font-titles: "Bebas Neue";
+  --font-button: "Roboto";
+  --font-size: 16px;
+  --line-height: 1.5;
+  --font-options: var(--font-size) / var(--line-height) var(--font-main), helvetica, sans-serif;
+  --gap: 1.5rem;
+  --unit-small-x: 1.5rem;
+  --unit-small: 2.5rem;
+  --unit-medium: 3.75rem;
+  --unit-large: 4.75rem;
+}
+/*General definitions*/
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font: var(--font-options);
+}
+body {
+  background-color: var(--color-light);
+}
+
+/*Layout*/
+.header {
+  height: 100vh;
+  display: flex;
+  background: url("images/header.png") no-repeat center/cover;
+}
+.main {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.footer {
+  margin-top: var(--unit-medium);
+  text-align: center;
+  background-color: var(--color-dark);
+}
+
+/*Common definitions*/
+.title,
+.header__title,
+.card__title,
+.footer__text {
+  font-family: var(--font-titles);
+}
+.title {
+  margin-top: var(--unit-small-x);
+  margin-bottom: var(--unit-small-x);
+}
+.grid__image,
+.card__image {
+  max-width: 100%;
+}
+
+/*Header definitions*/
+.logo {
+  margin: 0;
+  margin-top: var(--unit-small-x);
+  margin-left: var(--unit-small-x);
+}
+.logo__image {
+  max-width: 4rem;
+}
+.header__content {
+  text-align: right;
+  padding-right: var(--unit-small-x);
+  padding-bottom: var(--unit-large);
+  margin-top: auto;
+  margin-left: auto;
+  color: var(--color-text-light);
+}
+.header__title {
+  font-size: 3rem;
+  line-height: 1.1;
+}
+.header__text {
+  font-weight: 300;
+}
+
+/*Grid gallery definitions*/
+.grid {
+  display: grid;
+  gap: var(--gap);
+}
+.grid__figure {
+  overflow: hidden;
+}
+.grid__image {
+  width: 100%;
+  transition: transform 0.25s, filter 0.25s;
+}
+.grid__image:hover,
+.grid__image:focus {
+  transform: scale(1.1);
+  filter: saturate(2);
+}
+
+/*Flex cards dfinitions*/
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+.card {
+  position: relative;
+}
+.card__content {
+  position: absolute;
+  bottom: var(--unit-large);
+  padding: var(--unit-small-x);
+  color: var(--color-text-light);
+}
+.card__title {
+  font-size: 2rem;
+}
+.card__text {
+  font-weight: 400;
+}
+.card__button {
+  width: 100%;
+  padding: 1.2rem;
+  border: 0;
+  font-family: var(--font-button);
+  text-transform: uppercase;
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  transition: background 0.25s, color 0.25s;
+  position: absolute;
+  bottom: 0;
+}
+.card__button:hover {
+  background-color: var(--color-dark);
+  cursor: pointer;
+}
+.card__button:active {
+  background-color: var(--color-light);
+  color: var(--color-primary);
+}
+
+/*Footer definitions*/
+.footer__text {
+  font-size: 1.2rem;
+  padding: var(--unit-small);
+  color: var(--color-text-light);
+}
+
+/*Tablet definitions*/
+@media screen and (min-width: 768px) {
+  /*Tablet layout definitions*/
+  .main {
+    padding-left: var(--gap);
+    padding-right: var(--gap);
+  }
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    grid-auto-flow: dense;
+  }
+
+  /*Tablet common definitions*/
+  .title {
+    margin-top: var(--unit-medium);
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  /*Tablet header definitions*/
+  .logo {
+    margin-top: var(--unit-small);
+    margin-left: var(--unit-large);
+  }
+  .logo__image {
+    max-width: initial;
+  }
+  .header__content {
+    padding-bottom: var(--unit-small);
+  }
+  .header__title {
+    font-size: 5rem;
+  }
+  .header__text {
+    font-size: 2.8rem;
+  }
+
+  /*Tablet Grid gallery definitions*/
+  .grid__image {
+    object-fit: cover;
+    height: 100%;
+  }
+  .span-v {
+    grid-row: span 2;
+  }
+  .span-h {
+    grid-column: span 2;
+  }
+
+  /*Tablet Flex cards definitions*/
+  .cards {
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+  .card__title {
+    font-size: larger;
+  }
+  .card__text {
+    font-size: small;
+  }
+}
+
+/*Desktop definitions*/
+@media screen and (min-width: 1280px) {
+  /*Desktop layout definitions*/
+  .main {
+    max-width: 1128px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+  /*Desktop header definitions*/
+  .header__content {
+    padding-right: var(--unit-large);
+  }
+
+  /*Desktop common definitions*/
+  .title {
+    font-size: 3rem;
+  }
+
+  /*Desktop cards definition*/
+  .card__title {
+    font-size: 2.32rem;
+  }
+  .card__text {
+    font-size: initial;
+  }
+  .footer__text {
+    font-size: 2.43rem;
+  }
+}
