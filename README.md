@@ -4,9 +4,13 @@ Layout design developed with vanilla HTML/CSS
 
 What I use?
 
-- Semantic HTML
-- CSS variables
-- Media queries
-- First mobile design
+- [x] Semantic HTML
+- [x] CSS variables
+- [x] Media queries
+- [x] First mobile design
+- [x] Lazy loading images
+- [x] OpenGraph SEO
+- [x] OpenGraph SEO Image
+- [x] JSON-LD Micro data
 
-[Showcase](https://max131.github.io/node-tech-test)
+[Showcase](https://max131.github.io/node- [x]tech- [x]test)
