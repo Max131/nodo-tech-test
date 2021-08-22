@@ -1,6 +1,9 @@
 @charset "utf-8";
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400&family=Roboto:wght@500&display=swap");
 
+/***************/
+/*CSS Variables*/
+/***************/
 :root {
   --color-primary: hsl(0, 93%, 28%);
   --color-primary-light: hsl(0, 93%, 93%);
@@ -8,19 +11,22 @@
   --color-dark: hsl(0, 0%, 9%);
   --color-text-light: hsl(0, 0%, 100%);
   --color-text-dark: hsl(0, 0%, 0%);
+  --shadow: hsla(0, 0%, 10%, 0.3);
   --font-main: "Open Sans";
   --font-titles: "Bebas Neue";
   --font-button: "Roboto";
   --font-size: 16px;
   --line-height: 1.5;
   --font-options: var(--font-size) / var(--line-height) var(--font-main), helvetica, sans-serif;
-  --gap: 1.5rem;
-  --unit-small-x: 1.5rem;
-  --unit-small: 2.5rem;
-  --unit-medium: 3.75rem;
-  --unit-large: 4.75rem;
+  --gap: 24px;
+  --unit-small-x: 24px;
+  --unit-small: 40px;
+  --unit-medium: 60px;
+  --unit-large: 76px;
 }
+/*********************/
 /*General definitions*/
+/*********************/
 * {
   margin: 0;
   box-sizing: border-box;
@@ -31,24 +37,22 @@ html {
 body {
   background-color: var(--color-light);
 }
-
+/********/
 /*Layout*/
+/********/
 .header {
-  height: 100vh;
   display: flex;
+  height: 100vh;
   background: url("images/header.png") no-repeat center/cover;
-}
-.main {
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 .footer {
   margin-top: var(--unit-medium);
   text-align: center;
   background-color: var(--color-dark);
 }
-
+/********************/
 /*Common definitions*/
+/********************/
 .title,
 .header__title,
 .card__title,
@@ -59,26 +63,26 @@ body {
   margin-top: var(--unit-small-x);
   margin-bottom: var(--unit-small-x);
 }
-.grid__image,
+.gallery__image,
 .card__image {
   max-width: 100%;
 }
-
+/********************/
 /*Header definitions*/
+/********************/
 .logo {
-  margin: 0;
   margin-top: var(--unit-small-x);
   margin-left: var(--unit-small-x);
 }
 .logo__image {
-  max-width: 4rem;
+  max-width: 64px;
 }
 .header__content {
-  text-align: right;
   padding-right: var(--unit-small-x);
   padding-bottom: var(--unit-large);
   margin-top: auto;
   margin-left: auto;
+  text-align: right;
   color: var(--color-text-light);
 }
 .header__title {
@@ -88,113 +92,131 @@ body {
 .header__text {
   font-weight: 300;
 }
-
+/**************************/
 /*Grid gallery definitions*/
-.grid {
+/**************************/
+.gallery{
   display: grid;
-  grid-template-columns: 1fr;
   gap: var(--gap);
 }
-.grid__figure {
-  overflow: hidden;
+.gallery__figure {
+  width: 100%;
   min-height: 200px; /* If images are not loaded prevent layout deformation */
+  overflow: hidden;  /* Hide the image overflow on hover transform*/
+  transition: box-shadow 0.25s;
 }
-.grid__image {
+.gallery__figure:hover{
+  box-shadow: 0 0 25px var(--shadow);
+}
+.gallery__image {
   width: 100%;
   transition: transform 0.25s, filter 0.25s;
 }
-.grid__image:hover,
-.grid__image:focus {
+.gallery__image:hover,
+.gallery__image:focus {
   transform: scale(1.1);
   filter: saturate(2);
 }
 
+/***********************/
 /*Flex cards dfinitions*/
+/***********************/
 .cards {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: var(--gap);
 }
-.card {
-  flex: 1; /*Flex basis in case images are not loaded*/
-  min-width: 360px;
-  max-width: 30vw;
-  min-height: 490px; /*If the image is not loaded define a min height*/
-  background-color: var(--color-dark); /*background color in case images are not loaded*/
+.card{
+  flex: 1 0 280px;
+  max-width: 360px;
+  min-height: 490px;
+  background-color: var(--color-dark);
+  color: var(--color-text-light);
   position: relative;
 }
+.card__header{
+  height: 100%;
+}
 .card__image{
-  min-width: 100%;
+  width: 100%;
+  height: inherit;
   object-fit: cover;
 }
-.card__content {
-  position: absolute;
-  bottom: var(--unit-large);
-  padding: var(--unit-small-x);
-  color: var(--color-text-light);
-}
-.card__title {
-  font-size: 2rem;
-}
-.card__text {
-  font-weight: 400;
-}
-.card__button {
-  width: 100%;
-  padding: 1.2rem;
-  border: 0;
-  font-family: var(--font-button);
-  text-transform: uppercase;
-  text-align: center;
-  background-color: var(--color-primary);
-  color: var(--color-text-light);
-  border: 1px solid transparent;
-  text-decoration: none;
-  transition: background 0.5s, color 0.5s;
+.card__content{
   position: absolute;
   bottom: 0;
 }
-.card__button:hover {
-  background-color: var(--color-light);
-  color: var(--color-primary);
-  border-color: var(--color-primary);
+.card__title{
+  font-size: 30px;
+  padding: 0 23px;
 }
-.card__button:active {
+.card__text{
+  padding: 0 23px 40px;
+}
+.card__button{
+  display: block;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font: 14px var(--font-button);
+  border: 1px solid transparent;
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  transition: background 0.25s;
+}
+.card__button:hover,
+.card__button:focus{
+  background-color: var(--color-light);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.card__button:active{
   font-weight: bold;
 }
 
+/********************/
 /*Footer definitions*/
+/********************/
 .footer__text {
-  font-size: 1.2rem;
   padding: var(--unit-small);
+  font-size: 1.2rem;
   color: var(--color-text-light);
 }
 
+/********************/
 /*Tablet definitions*/
+/********************/
 @media screen and (min-width: 768px) {
+  /***************************/
   /*Tablet layout definitions*/
+  /***************************/
   .main {
     padding-left: var(--gap);
     padding-right: var(--gap);
   }
-  .grid {
+  .gallery{
     grid-template-columns: repeat(3, 1fr);
   }
-
+  /***************************/
   /*Tablet common definitions*/
+  /***************************/
   .title {
     margin-top: var(--unit-medium);
     font-size: 2rem;
     font-weight: 400;
   }
 
+  /***************************/
   /*Tablet header definitions*/
+  /***************************/
   .logo {
     margin-top: var(--unit-small);
     margin-left: var(--unit-large);
   }
   .logo__image {
-    max-width: initial;
+    max-width: unset;
   }
   .header__content {
     padding-bottom: var(--unit-small);
@@ -206,10 +228,12 @@ body {
     font-size: 2.8rem;
   }
 
+  /*********************************/
   /*Tablet Grid gallery definitions*/
-  .grid__image {
-    object-fit: cover;
+  /*********************************/
+  .gallery__image {
     height: 100%;
+    object-fit: cover;
   }
   .span-v {
     grid-row: span 2;
@@ -218,39 +242,36 @@ body {
     grid-column: span 2;
   }
 
-  /*Tablet Flex cards definitions*/
-  .cards {
-    justify-content: center;
-    flex-wrap: nowrap;
-  }
-  .card__title {
-    font-size: larger;
-  }
-  .card__text {
-    font-size: small;
-  }
-}
-
+/*********************/
 /*Desktop definitions*/
+/*********************/
 @media screen and (min-width: 1280px) {
+  /****************************/
   /*Desktop layout definitions*/
+  /****************************/
   .main {
     max-width: 1128px;
     margin-left: auto;
     margin-right: auto;
     padding: 0;
   }
+  /****************************/
   /*Desktop header definitions*/
+  /****************************/
   .header__content {
     padding-right: var(--unit-large);
   }
 
+  /****************************/
   /*Desktop common definitions*/
+  /****************************/
   .title {
     font-size: 3rem;
   }
 
+  /**************************/
   /*Desktop cards definition*/
+  /**************************/
   .card__title {
     font-size: 2.32rem;
   }
