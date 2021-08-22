@@ -11,6 +11,7 @@ What I use?
 - [x] Lazy loading images
 - [x] OpenGraph SEO
 - [x] OpenGraph SEO Image
-- [x] JSON-LD Micro data
+- [x] JSON-LD Micro data SEO
+- [x] WEBP Images for better performance
 
 [Showcase](https://max131.github.io/node-tech-test)
