@@ -43,7 +43,7 @@ body {
 .header {
   display: flex;
   height: 100vh;
-  background: url("images/header.png") no-repeat center/cover;
+  background: url("images/header.webp") no-repeat center/cover;
 }
 .footer {
   margin-top: var(--unit-medium);
