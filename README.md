@@ -6,6 +6,7 @@ What I use?
 
 - [x] Semantic HTML
 - [x] CSS variables
+- [x] BEM
 - [x] Media queries
 - [x] First mobile design
 - [x] Lazy loading images
