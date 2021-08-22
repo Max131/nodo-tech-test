@@ -15,6 +15,6 @@ What I use?
 - [x] OpenGraph SEO Image
 - [x] JSON-LD Micro data SEO
 - [x] WEBP Images for better performance
-- [x] Validated against the [W3 Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmax131.github.io%2Fnodo-tech-test%2F)
+- [x] Validated against the [W3 Validator](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&checkerrorpages=yes&useragent=Validator.nu%2FLV+http%3A%2F%2Fvalidator.w3.org%2Fservices&acceptlanguage=&doc=https%3A%2F%2Fmax131.github.io%2Fnodo-tech-test%2F)
 
 [Showcase](https://max131.github.io/nodo-tech-test)
