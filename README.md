@@ -10,6 +10,7 @@ What I use?
 - [x] Media queries
 - [x] First mobile design
 - [x] Lazy loading images
+- [x] SEO meta tags
 - [x] OpenGraph SEO
 - [x] OpenGraph SEO Image
 - [x] JSON-LD Micro data SEO
