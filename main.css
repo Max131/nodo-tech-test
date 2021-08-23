@@ -19,10 +19,11 @@
   --line-height: 1.5;
   --font-options: var(--font-size) / var(--line-height) var(--font-main), helvetica, sans-serif;
   --gap: 24px;
-  --unit-small-x: 24px;
-  --unit-small: 40px;
-  --unit-medium: 60px;
-  --unit-large: 76px;
+  --unit-normal: 24px;
+  --unit-medium: 40px;
+  --unit-medium-x: 47px;
+  --unit-large: 60px;
+  --unit-large-x: 76px;
 }
 /*********************/
 /*General definitions*/
@@ -40,13 +41,13 @@ body {
 /********/
 /*Layout*/
 /********/
-.header {
+.hero {
   display: flex;
   height: 100vh;
   background: url("images/header.webp") no-repeat center/cover;
 }
 .footer {
-  margin-top: var(--unit-medium);
+  margin-top: var(--unit-large);
   text-align: center;
   background-color: var(--color-dark);
 }
@@ -54,14 +55,14 @@ body {
 /*Common definitions*/
 /********************/
 .title,
-.header__title,
+.hero__title,
 .card__title,
 .footer__text {
   font-family: var(--font-titles);
 }
 .title {
-  margin-top: var(--unit-medium);
-  margin-bottom: var(--unit-small-x);
+  margin-top: var(--unit-large);
+  margin-bottom: var(--unit-normal);
 	padding-left: 0.5rem;
 }
 .gallery__image,
@@ -69,29 +70,29 @@ body {
   max-width: 100%;
 }
 /********************/
-/*Header definitions*/
+/*hero definitions*/
 /********************/
 .logo {
-  margin-top: var(--unit-small-x);
-  margin-left: var(--unit-small-x);
+  margin-top: var(--unit-normal);
+  margin-left: var(--unit-normal);
 }
 .logo__image {
   max-width: 64px;
 }
-.header__content {
-  padding-right: var(--unit-small-x);
-  padding-bottom: var(--unit-large);
+.hero__content {
+  padding-right: var(--unit-normal);
+  padding-bottom: var(--unit-large-x);
   margin-top: auto;
   margin-left: auto;
   text-align: right;
   color: var(--color-text-light);
 }
-.header__title {
+.hero__title {
   font-size: 3rem;
   font-weight: 400;
   line-height: 1.1;
 }
-.header__text {
+.hero__text {
   font-weight: 300;
 }
 /**************************/
@@ -131,7 +132,7 @@ body {
 .card{
   flex: 1 0 280px;
   max-width: 360px;
-  min-height: 490px;
+  min-height: 490px; /*Height in case the images are not loaded*/
   background-color: var(--color-dark);
   color: var(--color-text-light);
   position: relative;
@@ -198,7 +199,7 @@ body {
 /*Footer definitions*/
 /********************/
 .footer__text {
-  padding: var(--unit-small);
+  padding: var(--unit-medium);
   font-size: 1.2rem;
   color: var(--color-text-light);
 }
@@ -226,22 +227,22 @@ body {
   }
 
   /***************************/
-  /*Tablet header definitions*/
+  /*Tablet hero definitions*/
   /***************************/
   .logo {
-    margin-top: var(--unit-small);
-    margin-left: var(--unit-large);
+    margin-top: var(--unit-medium-x);
+    margin-left: var(--unit-large-x);
   }
   .logo__image {
     max-width: unset;
   }
-  .header__content {
-    padding-bottom: var(--unit-small);
+  .hero__content {
+    padding-bottom: var(--unit-medium);
   }
-  .header__title {
+  .hero__title {
     font-size: 5rem;
   }
-  .header__text {
+  .hero__text {
     font-size: 2.8rem;
   }
 	.title{
@@ -275,10 +276,10 @@ body {
     padding: 0;
   }
   /****************************/
-  /*Desktop header definitions*/
+  /*Desktop hero definitions*/
   /****************************/
-  .header__content {
-    padding-right: var(--unit-large);
+  .hero__content {
+    padding-right: var(--unit-large-x);
   }
 
   /****************************/
